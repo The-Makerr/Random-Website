@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Website</title>
+  <link rel="stylesheet" href="Styles/styles.css"> <!-- Link to the CSS file -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.16.0/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="script.js" defer></script> <!-- Link to the JavaScript file -->
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Add the audio player with autoplay --> 
+    <audio controls autoplay style="display: none;">
+        <source src="Styles/Music.mp3" type="audio/mpeg">
+        <!-- Add additional <source> elements for other audio formats -->
+        Your browser does not support the audio element.
+    </audio>
+    <div class="header">
+        <button class="menu-button" onclick="toggleSideMenu()">&#9776;</button> <!-- Add the menu button on the right -->
+        <h1>Random</h1> <!-- Add the "Random" text here -->
+    </div>
+    <div class="side-menu" id="sideMenu">
+        <div class="menu-header">
+            <!-- Leave this div empty or add a title here if needed -->
+        </div>
+        <ul class="menu-options">
+            <li><a href="#home-section" onclick="scrollToSection('#home-section'); toggleSideMenu()">Home</a></li>
+            <li><a href="#about-section" onclick="scrollToSection('#about-section'); toggleSideMenu()">About</a></li>
+            <li><a href="#contact-section" onclick="scrollToSection('#contact-section'); toggleSideMenu()">Contact</a></li>
+        </ul>
+    </div>
+    <div id="home-section" class="home-section">
+        <div class="welcome-text">
+            <p>Welcome to My Website</p>
+            <p>This is the home section of my website. Feel free to explore!</p>
+            <!-- Add more content specific to your home section here -->
+        </div>
+    </div>
+    <div id="about-section" class="about-section">
+
+    </div>
+    <div id="contact-section" class="contact-section">
+        <!-- Add content for the Contact section here -->
+    </div>
+
+    <script>
+        function scrollToSection(sectionId) {
+            var section = document.querySelector(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Function to toggle the side menu
+        function toggleSideMenu() {
+            var body = document.querySelector("body");
+            body.classList.toggle("show-side-menu");
+        }
+    </script>
+</body>
+</html>
